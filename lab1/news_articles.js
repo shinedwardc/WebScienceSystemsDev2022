@@ -1,7 +1,5 @@
 var array = [];
 var i = 0;
-var counter = 0;
-
 
 function createArticle(article){
     var li = document.createElement('li');
@@ -69,7 +67,6 @@ $(document).ready(function(){
             });*/
             //array.new(article.title, article.link, article.pubDate, article.description);
         });
-        console.log("counter: " + counter);
         var list = document.getElementById('articles');
         for (var index = 0; index < 5; index++){
             var element = createArticle(array[index]);
@@ -94,18 +91,6 @@ $(document).ready(function(){
         this.link = link;
         this.date = date;
         this.description = description;
-    }
-    get title(){
-        return this.title;
-    }
-    get link(){
-        return this.link;
-    }
-    get date(){
-        return this.date;
-    }
-    get description(){
-        return this.description;
     }
 }
 
