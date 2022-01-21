@@ -10,5 +10,5 @@ I also struggled in finding how to fix this one error I found, which was that wh
 
 # Sources
 https://stackoverflow.com/questions/1144705/best-way-to-store-a-key-value-array-in-javascript/1144737
-https://www.gobiznow.com/blog/mastering-jquery/using-jquery-getjson-method/ </ br>
+https://www.gobiznow.com/blog/mastering-jquery/using-jquery-getjson-method/ <br />
 https://getbootstrap.com/docs/4.0/components/card/
