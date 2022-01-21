@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 5%;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+hr {
+    border: 1px solid white;
+}
+
+#article {
+    text-align: center;
+}
+
+#articles {
+    font-size: 100%;
+}
