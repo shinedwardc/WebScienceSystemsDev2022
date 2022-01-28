@@ -35,14 +35,14 @@ $(document).ready(function() {
         let lat = getPosition.coords.latitude;
         let long = getPosition.coords.longitude;
         let key = "9c0723a59cec2b9edeaa774538f8ed7d";
-        console.log(lat);
-        console.log(long);
+        //console.log(lat);
+        //console.log(long);
         let link = 'http://api.openweathermap.org/data/2.5/weather?lat=';
         //let link2 = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&units=metric';
         link += lat;
         link += '&lon=' + long;
         link += '&appid=' + key;
-        console.log(link);
+        //console.log(link);
         //console.log(link2);
         $.getJSON(link, function(data) {
             //console.log(data.name);
