@@ -22,9 +22,11 @@ Twitter bots also use APIs to automatically tweet based on a set of instructions
 
 # Sources
 For card styling: </br>
-https://getbootstrap.com/docs/5.0/getting-started/introduction/
+https://getbootstrap.com/docs/5.0/getting-started/introduction/ </br>
 https://mdbootstrap.com/docs/standard/extended/weather/
+</br>
 https://mdbootstrap.com/docs/standard/content-styles/background-image/
 
 https://tecadmin.net/get-current-date-time-javascript/
+</br>
 https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
