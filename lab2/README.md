@@ -29,7 +29,7 @@ https://mdbootstrap.com/docs/standard/content-styles/background-image/
 </br>
 Background Image: </br>
 https://stock.adobe.com/search?k=%22weather+background%22
-</br>
+</br> </br>
 https://tecadmin.net/get-current-date-time-javascript/
 </br>
 https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
