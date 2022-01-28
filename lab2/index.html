@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Websys Lab 2 - Weather API</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <section class = "min-vh-100">
+            <h1 class = "mb-3 display-4 text-center">Weather app</h1>
+            <div id = "main" class = "container py-5 h-100">
+                <div class = "col-md-8 col-lg-6 col-xl-4 shadow p-3 mb-5 rounded">
+                    <div class = "card text-dark rounded">
+                        <div class = "card-body p-4">
+                            <div class = "d-flex">
+                                <h6 id = "city" class = "flex-grow-1 font-weight-bold">
+
+                                </h6>
+                                <h6 id = "date" class = "font-weight-bold">
+
+                                </h6>
+                            </div>
+                            <div class = "d-flex flex-column text-center mt-5 mb-4">
+                                <h6 id = "temp" class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> 
+
+                                </h6>
+                                <span id = "status" class="small" style="color: #868B94">
+                                
+                                </span>
+                            </div>
+                            <div class = "d-flex">
+                                <div id = "description" class = "flex-grow-1" style="font-size: 1rem;">
+
+                                </div>
+                                <div id = "image">
+                                
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src = "weather.js"></script>
+</html>

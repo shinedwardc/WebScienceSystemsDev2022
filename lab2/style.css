@@ -1,0 +1,19 @@
+body {
+    font-family: Ubuntu, "times new roman", times, roman, serif;
+    background-image: url('weather_background.jpg');
+}
+
+#title {
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image {
+    display: flex;
+    justify-content: right;
+}
