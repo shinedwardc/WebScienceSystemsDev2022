@@ -48,7 +48,7 @@
     <script>
         $('#submit').on("click", function(e) {
             e.preventDefault();
-            console.log($("#name").val())
+            //console.log($("#name").val())
             fetch(`/movie?title=${$("#name").val()}`)
             .then((res) => res.json())
             .then((res) => {            

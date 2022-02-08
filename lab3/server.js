@@ -31,7 +31,7 @@ async function getMovie(title) {
       )
       .json();
   }
-  console.log(movieData);
+  //console.log(movieData);
   return movieData;
 }
 
@@ -39,7 +39,7 @@ app.get('/movie', function (req, res) {
   if (!req.query.title){
     console.log("Can't find title")
   }
-  console.log(req.query.title)
+  //console.log(req.query.title)
   getMovie(req.query.title)
     .then((data) => {
       console.log(data.Title)
