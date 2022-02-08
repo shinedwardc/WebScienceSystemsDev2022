@@ -1,0 +1,44 @@
+body {
+    font-family: Ubuntu, "times new roman", times, roman, serif;
+    background-image: url('theater_wallpaper.jpg');
+    background-position: right 5px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+}
+
+#chat-form {
+    text-align: center;
+}
+
+#type {
+    text-align: center;
+    color: white;
+    font-size: 100%;
+}
+
+.description {
+    text-align: center;
+}
+
+#reviews {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#basic-information, #genre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+
+#plot {
+    font-stretch: condensed;
+    margin: 0 30% 0 30%;
+}

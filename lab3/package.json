@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "bson": "^0.4.21",
+    "express": "^4.17.2",
+    "got": "^11.8.3",
+    "he": "^1.2.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2"
+  },
+  "license": "UNLICENSED"
+}

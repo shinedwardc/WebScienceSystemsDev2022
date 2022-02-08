@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 3</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <link rel="shortcut icon" href="#">
+        <link rel ="stylesheet" type="text/css" href="./style.css">
+    </head>
+    <body>
+        <div class="header">
+            <hr>
+            <h1 class = "title">Search for a movie's information and more!</h1>
+            <hr>
+        </div>
+        <div class="find">
+            <h5 id = "type">Search for a movie <i class="fas fa-film"></i></h5>
+            <form action="" id="chat-form">
+                <input type = "text" id="name" size = "30" placeholder = "Title" autocomplete="off" />
+                <input id = "submit" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class = "description">
+            <h1 id = "title"></h1>
+            <section id = "basic-information">
+                <h3 id = "year"></h3>
+                <h3 id = "released"></h3>
+                <!---<h3 id = "runtime"></h3>!--->
+            </section>
+            <section id = "genre">
+                <h3 id = "genre"></h3>
+                <h3 id = "rated"></h3>
+            </section>
+            <section id = "writers">
+                <h5 id = "director"></h5>
+                <h5 id = "writer"></h5>
+                <h5 id = "actors"></h5>
+            </section>
+            <p id = "plot"></p>
+            <section id = "reviews">
+                <h6 id = "metascore"></h6>
+                <h6 id = "imdbrating"></h6>
+            </section>
+
+        </div>
+    </body>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $('#submit').on("click", function(e) {
+            e.preventDefault();
+            console.log($("#name").val())
+            fetch(`/movie?title=${$("#name").val()}`)
+            .then((res) => res.json())
+            .then((res) => {            
+                $('#title').html(res.title) 
+                $('#year').html('Released: ' + res.year)
+                $('#rated').html(res.rated)
+                $('#released').html(res.released)
+                //$('#runtime').html(res.runtime)
+                $('#genre').html(res.genre)
+                $('#director').html('Directors: ' + res.director)
+                $('#writer').html('Writers: ' + res.writer)
+                $('#actors').html('Starring: ' + res.actors)
+                $('#plot').html('Plot: ' + res.plot)
+                $('#metascore').html('Metascore: ' + res.metascore + '/100')
+                $('#imdbrating').html('IMDB rating: ' + res.imdbrating + '/10')   
+            })
+
+        });
+    </script>
+</html>
