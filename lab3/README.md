@@ -19,12 +19,12 @@ Background Image: </br>
 https://wallpapercave.com/movie-theatre-wallpapers
 </br> </br>
 Node.js </br>
-https://expressjs.com/en/starter/basic-routing.html
-https://stackoverflow.com/questions/25463423/res-sendfile-absolute-path
-https://www.npmjs.com/package/got
+https://expressjs.com/en/starter/basic-routing.html </br>
+https://stackoverflow.com/questions/25463423/res-sendfile-absolute-path </br>
+https://www.npmjs.com/package/got </br>
 CSS </br>
 https://www.reddit.com/r/webdev/comments/nvzhi0/flexbox_css_cheat_sheet/</br>
-https://css-tricks.com/perfect-full-page-background-image/
+https://css-tricks.com/perfect-full-page-background-image/ </br>
 Fronted Javascript/Jquery
 </br>
 https://api.jquery.com/html/</br>
