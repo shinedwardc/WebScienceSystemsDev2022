@@ -1,7 +1,7 @@
 # Edward Shin
 # shine2
 # Web Science Systems Development
-# Lab 1
+# Lab 2
 
 # Reflection
 For this lab, I used an API from openweathermap.org, which provided a standard daily forecast.
