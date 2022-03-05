@@ -1,9 +1,4 @@
 <body>
-    <div class="header">
-        <hr>
-        <h1 id = "title">Search for a movie's information and more!</h1>
-        <hr>
-    </div>
     <div class="find">
         <h2 id = "type">Search for a movie <mat-icon></mat-icon></h2>
         <!---<form>
@@ -19,6 +14,7 @@
 
     <div class = "description" *ngIf = "isDisplayed">
         <h1 id = "title">{{data.title}}</h1>
+        <div id = "poster"><img src = "{{data.poster}}" alt = poster></div>
         <section id = "basic-information">
             <h3 id = "released">Released: {{data.year}}</h3>
             <h3 id = "runtime"></h3>

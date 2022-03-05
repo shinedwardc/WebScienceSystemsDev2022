@@ -56,7 +56,8 @@ app.get('/movie', function (req, res) {
         actors: data.Actors,
         plot: data.Plot,
         metascore: data.Metascore,
-        imdbrating: data.imdbRating
+        imdbrating: data.imdbRating,
+        poster: data.Poster
       });
     })
     .catch(() => res.sendStatus(500));
