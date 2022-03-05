@@ -1,0 +1,45 @@
+<body>
+    <div class="header">
+        <hr>
+        <h1 id = "title">Search for a movie's information and more!</h1>
+        <hr>
+    </div>
+    <div class="find">
+        <h2 id = "type">Search for a movie <mat-icon></mat-icon></h2>
+        <!---<form>
+            <input #newTitle (keyup.enter)="getTitle(newTitle.value)" (blur)="getTitle(newTitle.value); newTitle.value = ''" />
+            <button type = "button" (click)="getData()"></button>
+        </form>--->
+        <form id = "form" #userPost="ngForm" (ngSubmit)="onSubmit(userPost)">
+            <input type = "text" name = "title" ngModel placeholder = "Enter a title">
+            <button type = "submit">Search</button>
+        </form>
+
+    </div>
+
+    <div class = "description" *ngIf = "isDisplayed">
+        <h1 id = "title">{{data.title}}</h1>
+        <section id = "basic-information">
+            <h3 id = "released">Released: {{data.year}}</h3>
+            <h3 id = "runtime"></h3>
+        </section>
+        <section>
+            <h3 id = "genre">{{ data.genre }} </h3>
+            <h3 id = "rated"> Rated: {{ data.rated }}</h3>
+        </section>
+        <section id = "writers">
+            <h5 id = "director">Directors: {{ data.director }}</h5>
+            <h5 id = "writer">Writers: {{ data.writer }}</h5>
+            <h5 id = "actors">Starring: {{ data.actors }}</h5>
+        </section>
+        <p id = "plot">Plot: {{ data.plot }}</p>
+        <section id = "reviews">
+            <h6 id = "metascore">Metascore: {{ data.metascore }}/100</h6>
+            <h6 id = "imdbrating">IMDB Rating: {{ data.imdbrating }}/10</h6>
+        </section>
+
+    </div>
+    <div id = "none" *ngIf = "noMovie">
+        <p>No movie titled {{ title }} in the database!</p>
+    </div>
+</body>
