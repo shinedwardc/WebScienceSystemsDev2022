@@ -52,6 +52,107 @@ export class InputBoxComponent implements OnInit {
     console.log(this.title);
   }
 
+  Get(){
+    this.Got = false;
+    console.log(this.queue);
+    if (this.queue === 0){
+      this.http.GetRequest('db','').subscribe((data) => {
+        console.log(data);
+      })
+      this.Got = !this.Got;
+    }
+    else{
+      this.http.GetRequest('db',this.queue.toString()).subscribe((data) => {
+        console.log(data);
+      })
+      this.Got = !this.Got;
+    }
+  }
+  Post(){
+    this.Got = false;
+    if (this.queue !== 0){
+      alert("Reset number, number cannot be inputted");
+    }
+    else if (this.title !== ""){
+      this.http.PostRequest('db',{title: this.title}).subscribe((data) => {
+        
+      })
+    }
+    else{
+      alert("Must have title inputted!");
+    }
+  }
+  Put(){
+    this.Got = false;
+    if (this.queue === 0){
+      this.http.PutRequest('db',{title: this.title}).subscribe((data) => {
+        console.log(data);
+      })
+    }
+    else{
+      //console.log("Not 0");
+      this.http.PutRequestWithParam('db',this.queue,{title: this.title}).subscribe((data) => {
+        console.log(data);
+      })
+    }
+  }
+  Delete(){
+    //console.log("Deleting: " + this.queue);
+    this.Got = false;
+    if (this.queue !== 0){
+      //console.log("Not 0!");
+      this.http.DeleteRequestWithParam('db',this.queue).subscribe((data) =>{
+        console.log(data);
+      })
+    }
+    else{
+      this.http.DeleteRequest('db').subscribe((data) => {
+
+      })
+    }
+  }
+  Reset(){
+    this.queue = 0;
+    this.title = "";
+    this.Got = false;
+  }
+  /*
+  deleteReq(f: NgForm){
+    console.log(f.value.number);
+    //console.log(f.value.number === undefined)
+    //console.log(f.value.number.length);
+    if ((f.value.number.length) !== 0){
+      this.queue = f.value.number;
+      console.log(this.queue)
+      this.http.DeleteRequestWithParam('db',this.queue).subscribe((data) => {
+
+      })
+    }
+    else{
+      this.http.DeleteRequest('db').subscribe((data) => {
+
+      })
+    }
+
+  }
+
+  get(f: NgForm){
+    this.http.GetRequest('db','').subscribe((data) =>{
+      console.log(data);
+    })
+  }
+
+
+  post(f: NgForm){
+    this.title = f.form.value.title;
+    console.log(this.title);
+    //console.log(JSON.stringify(this.data));
+    //console.log(this.data[0].title);
+    this.http.PostRequest('db',{title: this.title}).subscribe((data) => {
+      console.log(data);
+    });
+
+  }*/
   /*
   sendData() {
     console.log(this.title);
@@ -133,111 +234,5 @@ export class InputBoxComponent implements OnInit {
     )
     )
     //this.sendData()
-  }*/
-  Get(){
-    this.Got = false;
-    console.log(this.queue);
-    if (this.queue === 0){
-      this.http.GetRequest('db','').subscribe((data) => {
-        console.log(data);
-      })
-      this.Got = !this.Got;
-    }
-    else{
-      this.http.GetRequest('db',this.queue.toString()).subscribe((data) => {
-        console.log(data);
-      })
-      this.Got = !this.Got;
-    }
-  }
-  Post(){
-    this.Got = false;
-    if (this.queue !== 0){
-      alert("Reset number, number cannot be inputted");
-    }
-    else if (this.title !== ""){
-      this.http.PostRequest('db',{title: this.title}).subscribe((data) => {
-        
-      })
-    }
-    else{
-      alert("Must have title inputted!");
-    }
-  }
-  Put(){
-    this.Got = false;
-    if (this.queue === 0){
-      this.http.PutRequest('db',{title: this.title}).subscribe((data) => {
-        console.log(data);
-      })
-    }
-    else{
-      //console.log("Not 0");
-      this.http.PutRequestWithParam('db',this.queue,{title: this.title}).subscribe((data) => {
-        console.log(data);
-      })
-    }
-  }
-  Delete(){
-    //console.log("Deleting: " + this.queue);
-    this.Got = false;
-    if (this.queue !== 0){
-      console.log("Not 0!");
-      this.http.DeleteRequestWithParam('db',this.queue).subscribe((data) =>{
-        console.log(data);
-      })
-    }
-    else{
-      this.http.DeleteRequest('db').subscribe((data) => {
-
-      })
-    }
-  }
-  Reset(){
-    this.queue = 0;
-    this.title = "";
-    this.Got = false;
-  }
-  /*delete(){
-    this.http.DeleteRequest('db').subscribe((data) => {
-      
-    })
-  }*/
-  /*
-  deleteReq(f: NgForm){
-    console.log(f.value.number);
-    //console.log(f.value.number === undefined)
-    //console.log(f.value.number.length);
-    if ((f.value.number.length) !== 0){
-      this.queue = f.value.number;
-      console.log(this.queue)
-      this.http.DeleteRequestWithParam('db',this.queue).subscribe((data) => {
-
-      })
-    }
-    else{
-      this.http.DeleteRequest('db').subscribe((data) => {
-
-      })
-    }
-
-  }
-
-  get(f: NgForm){
-    this.http.GetRequest('db','').subscribe((data) =>{
-      console.log(data);
-    })
-  }
-
-
-  post(f: NgForm){
-    this.title = f.form.value.title;
-    console.log(this.title);
-    //console.log(JSON.stringify(this.data));
-    //console.log(this.data[0].title);
-    this.http.PostRequest('db',{title: this.title}).subscribe((data) => {
-      console.log(data);
-    });
-
   }*/
 }

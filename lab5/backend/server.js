@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const app = express();
 
 const jsonParser = bodyParser.json();
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
+//const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const got = require("got");
 const path = require("path");
@@ -22,17 +22,25 @@ app.listen(port, () => {
 
 app.use(express.static(path.join(__dirname, '../frontend/lab5/dist/lab5')));
 
-/*app.get('/', function (req, res) {
-	res.sendFile(__dirname + "/index.html")
-})
+async function post (n){
+  //client.connect();
+  await client.connect(); 
+  console.log("database connected"); 
+  const database = client.db('first_database');
+  const movies = database.collection('movies');
+  var movie = {
+    number: n,
+    title : 'movie'
+  }
+  console.log(movie);
+  movies.insertOne(movie);
+}
 
-app.get('/style.css', function(req, res){
-  res.sendFile(__dirname + "/style.css")
-})
-
-app.get('/theater_wallpaper.jpg', function(req, res){
-  res.sendFile(__dirname + "/theater_wallpaper.jpg")
-})*/
+/*for (var i = 1; i < 101; i++){
+  console.log("i: " + i);
+  post(i);
+  //client.disconnect();
+}*/
 
 let movieData;
 let key = 'b7577ca';
@@ -77,28 +85,6 @@ app.get('/movie', function (req, res) {
 });
 
 
-
-/*async function run() {
-  try {
-    await client.connect();
-    console.log("database connected");
-    const database = client.db('first_database');
-    const movies = database.collection('collection');
-    const cursor = movies.find();
-    // print a message if no documents were found
-    if ((await cursor.count()) === 0) {
-      console.log("No documents found!");
-    }
-    // replace console.dir with your callback to access individual elements
-    await cursor.forEach(console.dir);
-  } finally {
-    await client.close();
-  }
-}
-*/
-
-
-
 app.get('/db', async function (req, res) {
   await client.connect();
   const database = client.db('first_database');
@@ -138,7 +124,7 @@ app.get('/db/:number', async function (req, res) {
 
 app.post('/db', jsonParser, async function (req, res) {
   await client.connect();
-  console.log('connected');
+  //console.log('connected');
   const database = client.db('first_database');
   var movies = database.collection('movies');
   //console.log(JSON.stringify(js))
@@ -147,42 +133,11 @@ app.post('/db', jsonParser, async function (req, res) {
   var movieData = {
     title: req.body.title   
   }
-  console.log(movieData);
+  //console.log(movieData);
   movies.insertOne(movieData);
   //console.log('haha');
 })
-/*
-app.post('/db/:title', async function (req, res) {
-  await client.connect();
-  const database = client.db('first_database');
-  var movies = database.collection('collection');
-  console.log(req.params.title);
-  var movieData = {
-    title: req.params.title   
-  }
-  movies.insertOne(movieData);
-})
-*/
 
-/*async function post (n){
-  //client.connect();
-  await client.connect(); 
-  console.log("database connected"); 
-  const database = client.db('first_database');
-  const movies = database.collection('movies');
-  var movie = {
-    number: n,
-    title : 'Ratatouille'
-  }
-  console.log(movie);
-  movies.insertOne(movie);
-}
-
-for (var i = 1; i < 101; i++){
-  console.log("i: " + i);
-  post(i);
-  //client.disconnect();
-}*/
 
 app.put('/db', jsonParser, async function (req,res){
   await client.connect();
@@ -230,7 +185,7 @@ app.delete('/db', async function (req,res){
 
 app.delete('/db/:number', async function (req,res){
   await client.connect();
-  console.log(req.params.number);
+  //console.log(req.params.number);
   const database = client.db('first_database');
   const movies = database.collection('movies');
   const query = { number: parseInt(req.params.number)};
