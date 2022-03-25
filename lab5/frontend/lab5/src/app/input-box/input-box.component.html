@@ -1,0 +1,51 @@
+<div id = "Post">
+    <h2>Requests</h2>
+    <form #form="ngForm" (submit)="submitNumber(form)">
+        <h3>Submit a number parameter</h3>
+        <input ngModel type = "number" name = "number">
+        <button type = "submit">Submit</button>
+    </form>
+</div>
+<div id="Post">
+    <div id = "nameIn">
+        <form #title = "ngForm" (submit)="submitTitle(title)" ngNativeValidate>
+            <h3>Enter a title parameter</h3>
+            <input ngModel type = "text" name = "title">
+            <button type = "submit">Submit</button>
+        </form>
+    </div>
+    
+    <!---<div id="nameIn">
+        <form #form="ngForm" (submit)="post(form)" ngNativeValidate>
+        <input ngModel type="text" name="title" required>
+        <button type="submit">POST</button><br />
+        </form>
+        <form #form="ngForm" (submit)="get(form)" ngNativeValidate>
+        <input ngModel type = "text" name="title">
+        <button type = "submit">GET</button>
+        </form>
+        <form #DeleteForm = "ngForm" (submit)="deleteReq(DeleteForm)">
+        <input ngModel type = "number" name = "number">
+        <button type = "submit">DELETE</button>
+        </form>
+        <form #UpdateForm = "ngForm" (submit)="Put(UpdateForm)">
+        <input ngModel type = "number" name = "number">
+        <button type = "submit">PUT</button>
+        </form>         
+    </div>--->
+</div>
+<div id = "buttons">
+    <button (click) = "Get()">GET</button>
+    <button (click) = "Post()">POST</button>
+    <button (click) = "Put()">PUT</button>
+    <button (click) = "Delete()">DELETE</button>
+    <!---<button (click) = "get()">GET</button>-->
+    <!---<button (click) = "post()">POST</button>--->
+
+</div>
+<div id = "buttons" *ngIf = "Got">
+    <p>Get request success! Check console</p>
+</div>
+<div id = "buttons">
+    <button (click) = "Reset()">RESET</button>
+</div>
