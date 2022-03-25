@@ -54,7 +54,7 @@ export class InputBoxComponent implements OnInit {
 
   Get(){
     this.Got = false;
-    console.log(this.queue);
+    //console.log(this.queue);
     if (this.queue === 0){
       this.http.GetRequest('db','').subscribe((data) => {
         console.log(data);
