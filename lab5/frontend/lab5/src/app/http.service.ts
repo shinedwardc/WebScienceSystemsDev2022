@@ -24,16 +24,16 @@ export class HttpService {
     //console.log(data);
     return this.httpClient.post(this.url + endpoint, body);
   }
-  public DeleteRequest(endpoint: string){
-    return this.httpClient.delete(this.url + endpoint);
-  }
-  public DeleteRequestWithParam(endpoint: string, N: number){
-    return this.httpClient.delete(this.url + endpoint + '/' + N);
-  }
   public PutRequest(endpoint: string, body: Object){
     return this.httpClient.put(this.url + endpoint,body);
   }
   public PutRequestWithParam(endpoint: string, N: number, body: Object){
     return this.httpClient.put(this.url + endpoint + '/' + N, body);
+  }
+  public DeleteRequest(endpoint: string){
+    return this.httpClient.delete(this.url + endpoint);
+  }
+  public DeleteRequestWithParam(endpoint: string, N: number){
+    return this.httpClient.delete(this.url + endpoint + '/' + N);
   }
 }
