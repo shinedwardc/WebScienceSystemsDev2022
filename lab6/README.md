@@ -1,6 +1,6 @@
 # Edward Shin 
 # Lab 6
-# Reflection log
+# Reflection
 
 For this lab, I found three new external APIs that gave the same broad genre of data (movie data). For the pipeline, I focused on the most simple but important information about a movie, the title and release year as the examples. The pipeline function normalizes the data from all four apis, so that they output the same set format, the title and year. There are four new additional buttons get, post, put, and delete, which manipulates the new 'lab6' database. 
 
