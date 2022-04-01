@@ -36,6 +36,18 @@ async function post (n){
   movies.insertOne(movie);
 }
 
+/*async function post (){
+  await client.connect(); 
+  //console.log("database connected"); 
+  const database = client.db('first_database');
+  const documents = database.collection('lab6');
+  var movie = {
+    title : 'Ratatouille',
+    year : '2007'
+  }
+  documents.insertOne(movie);
+}*/
+
 /*for (var i = 1; i < 101; i++){
   console.log("i: " + i);
   post(i);
