@@ -17,7 +17,7 @@ export class ScatterComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = [];
-    this.http.CSVGet('csv').subscribe((data) => {
+    this.http.GetRequest('csv','').subscribe((data) => {
       this.data = data;
       let index = 0;
       while (index != 995){

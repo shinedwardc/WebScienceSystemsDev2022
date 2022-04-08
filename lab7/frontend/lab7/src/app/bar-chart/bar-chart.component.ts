@@ -25,7 +25,7 @@ export class BarChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = [];
-    this.http.CSVGet('csv').subscribe((data) => {
+    this.http.GetRequest('csv','').subscribe((data) => {
       /*for (var i = 0; i){
         this.data.push(i);
       }*/

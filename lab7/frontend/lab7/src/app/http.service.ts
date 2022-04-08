@@ -36,9 +36,4 @@ export class HttpService {
   public DeleteRequestWithParam(endpoint: string, input: string){
     return this.httpClient.delete(this.url + endpoint + '/' + input);
   }
-
-  public CSVGet(endpoint: string){
-    return this.httpClient.get(this.url + endpoint);
-  }
-
 }
