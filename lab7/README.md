@@ -1,5 +1,5 @@
 # Edward Shin 
-# Lab 6
+# Lab 7
 # Reflection
 To give a brief explanation of the bar chart, this chart's y axis has the number of votes the movie has in imdb, and the x axis represents the according movie's title.
 The scatter chart shows the relationship with the number of votes increases depending on how recently the movie came out.
