@@ -1,0 +1,46 @@
+#body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#poster {
+    text-align: center;
+}
+
+#form {
+    text-align: center;
+}
+
+
+#type {
+    text-align: center;
+    color: black;
+    font-size: 100%;
+}
+
+.description {
+    text-align: center;
+}
+
+#reviews {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#genre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+
+#plot {
+    font-stretch: condensed;
+    margin: 0 30% 0 30%;
+}
+
+#none {
+    text-align: center;
+}

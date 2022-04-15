@@ -1,0 +1,21 @@
+/*#fixed_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100% 
+}*/
+
+
+#title {
+    color: white;
+    text-align: center;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+a:hover {
+    color: rgb(97,127,172);
+}
