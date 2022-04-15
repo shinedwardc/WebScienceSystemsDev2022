@@ -16,6 +16,7 @@ export class InputBoxComponent implements OnInit {
   title : string = "";
   queue : number = 0;
   Got : boolean = false;
+  Got6 : boolean = false;
   TitleInputted : boolean = false;
   NumberInputted : boolean = false;
   //form: FormGroup
@@ -26,7 +27,6 @@ export class InputBoxComponent implements OnInit {
   }
 
   submitNumber(f: NgForm){
-    this.queue = 0;
     this.NumberInputted = true;
     //console.log(f.value);
     //console.log(f.value.number);
@@ -35,7 +35,6 @@ export class InputBoxComponent implements OnInit {
   }
 
   submitTitle(f: NgForm){
-    this.title = "";
     this.TitleInputted = true;
     this.title = f.value.title;
     console.log(this.title);
@@ -109,7 +108,7 @@ export class InputBoxComponent implements OnInit {
     this.TitleInputted = false;
   }
   lab6get(){
-    this.Got = true;
+    this.Got6 = true;
     if (this.title.length !== 0){
       this.http.GetRequest('movie',this.title).subscribe((data) => {
         console.log(data);
@@ -122,16 +121,16 @@ export class InputBoxComponent implements OnInit {
     }
   }
   lab6post(){
-    this.Got = false;
+    this.Got6 = false;
     if (this.title.length !== 0){
-      this.http.PostRequest('movie',{this: this.title}).subscribe()
+      this.http.PostRequest('movie',{title: this.title}).subscribe()
     }
     else{
       alert('Title must be inputted')
     }
   }
   lab6put(){
-    this.Got = false;
+    this.Got6 = false;
     if (this.title.length === 0){
       this.http.PutRequest('movie',{title: this.title}).subscribe();
     }
@@ -140,7 +139,7 @@ export class InputBoxComponent implements OnInit {
     }
   }
   lab6delete(){
-    this.Got = false;
+    this.Got6 = false;
     if (this.title.length === 0){
       this.http.DeleteRequest('movie').subscribe();
     }
